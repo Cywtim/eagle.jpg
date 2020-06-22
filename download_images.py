@@ -49,6 +49,3 @@ for i in range(len(myData['myurl'])):
     url = soup.find('img')['src']
     print("Downloading EAGLE galaxy %i..."%i)
     urllib.urlretrieve(url, img)
-
-# np.save("mass.npy", myData['mass'])
-# np.save("virial.npy", myData['virial'])
