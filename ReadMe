@@ -1,0 +1,10 @@
+Para extrair a URL do src fornecido pela query, precisamos da biblioteca BeautifulSoup. É uma versão antiga que é compatível com o código do EAGLE.
+
+Para instalar, entrar na pasta BeautifulSoup-3.2.2/
+
+sudo python setup.py install
+
+O arquivo download_images.py contém os dados de acesso ao database, os critérios da query e o loop de download das imagens. Não esquecer do username e password.
+
+#usage
+python download_images.py
