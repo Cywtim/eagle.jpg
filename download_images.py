@@ -8,7 +8,7 @@ from sys import argv
 mySims = np.array([('RefL0100N1504', 100.)])
 
 # This uses the eagleSqlTools module to connect to the database with your username and password.
-con = sql.connect('fcb440', password='ECB11jb8')
+con = sql.connect('usrname', password='password')
 
 for sim_name, sim_size in mySims:
         print( sim_name)
