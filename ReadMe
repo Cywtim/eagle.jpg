@@ -1,4 +1,6 @@
 This code needs BeautifulSoup4
 
+This batch is for beautifulsoup4 and python3 compared with the main batch
+
 #usage
 python download_images.py
