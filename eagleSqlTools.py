@@ -5,8 +5,10 @@
 
 import numpy as np
 import urllib
-import urllib2
-import cookielib
+import urllib.request as urllib2
+from urllib.parse import urlencode
+from urllib.request import urlopen
+import http.cookiejar as cookielib
 import re
 from getpass import getpass
 
@@ -46,9 +48,9 @@ class WebDBConnection:
 
     def execute_query(self, sql):
         """Run an SQL query and return the result as a record array"""
-        url = self.db_url + "?" + urllib.urlencode({'action': 'doQuery', 'SQL': sql})
+        url = self.db_url + "?" + urlencode({'action': 'doQuery', 'SQL': sql})
         urllib2.install_opener(urllib2.build_opener(self.auth_handler, self.cookie_handler))
-        response = urllib2.urlopen(url)
+        response = urlopen(url)
         cookie_jar.save(ignore_discard=True)
 
         # Check for OK response
@@ -91,9 +93,9 @@ class WebDBConnection:
 
     def fetch_docs(self, table):
         """Return a list of strings containing the documentation page for the specified table"""
-        url = self.db_url + "/Help?" + urllib.urlencode({'page': "databases/"+"Eagle"+"/"+table})
+        url = self.db_url + "/Help?" + urlencode({'page': "databases/"+"Eagle"+"/"+table})
         urllib2.install_opener(urllib2.build_opener(self.auth_handler, self.cookie_handler))
-        response = urllib2.urlopen(url)
+        response = urlopen(url)
         cookie_jar.save(ignore_discard=True)
         return response.readlines()
 

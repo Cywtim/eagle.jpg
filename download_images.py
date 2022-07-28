@@ -1,14 +1,14 @@
 import eagleSqlTools as sql
 import numpy as np
 import urllib
-import BeautifulSoup
+from bs4 import BeautifulSoup
 from sys import argv
 
 # Array of chosen simulations. Entries refer to the simulation name and comoving box length.
 mySims = np.array([('RefL0100N1504', 100.)])
 
 # This uses the eagleSqlTools module to connect to the database with your username and password.
-con = sql.connect('user', password='passw')
+con = sql.connect('fcb440', password='ECB11jb8')
 
 for sim_name, sim_size in mySims:
         print( sim_name)
